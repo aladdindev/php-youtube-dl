@@ -6,9 +6,9 @@ A PHP script to help you download your own videos from Youtube
 ## Getting Started
 Download the [PHP script][php].
 
-[php]: https://raw.github.com/UMaster/php-youtube-dl/master/dist/php-youtube-dl.php
+[php]: https://raw.github.com/UMaster/php-youtube-dl/master/php-youtube-dl.php
 
-Make sure PHP-Cli is installed and added to your PATH variable.
+Make sure PHP-CLI is installed and added to your PATH variable.
 
 ```
 php php-youtube-dl.php -f 28 -t myvideo http://youtube.com/watch?v=xxxxxx
