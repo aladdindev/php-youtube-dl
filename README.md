@@ -1,5 +1,5 @@
 # php-youtube-dl
-A PHP script to help you download your own videos from Youtube
+A PHP script to help you download your videos from Youtube
 
 ![](http://www.aladdian.com/img/ytdl.png)
 
