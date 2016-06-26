@@ -482,7 +482,6 @@ function getCurrentHTML5PlayerURL($url){
 function getCipherJSFunctionName($file_content){
 	if(preg_match("/[\$a-zA-Z][a-zA-Z\d]*=([\$a-zA-Z][a-zA-Z\d]*)\.sig\|\|([\$a-zA-Z][a-zA-Z\d]*)\(\\1\.s\)/s", 
 		$file_content, $match)){
-			
 		return $match[2];
 	}
 
@@ -499,8 +498,11 @@ function getCipherJSFunctionName($file_content){
  */
 function getCipherJSFunctionBody($file_content, $function_name){
 	$function_name = preg_quote($function_name, "/");
-
-	if(preg_match("/\bfunction\s+$function_name\s*\([\$a-zA-Z][a-zA-Z\d]*\)\s*\{(.*?)\}/s", $file_content, $match)){
+	
+	if(preg_match("/$function_name\s*=\s*function\s*\([\$a-zA-Z][a-zA-Z\d]*\)\s*\{(.*?)\}/s", $file_content, $match)){
+		return $match[1];
+	}
+	else if(preg_match("/\bfunction\s+$function_name\s*\([\$a-zA-Z][a-zA-Z\d]*\)\s*\{(.*?)\}/s", $file_content, $match)){
 		return $match[1];
 	}
 	else if(preg_match("/(?:\bvar\s+|,\s*)$function_name\s*=\s*function\s*\([\$a-zA-Z][a-zA-Z\d]*\)\s*{(.*?)}/s", $file_content, $match)){
