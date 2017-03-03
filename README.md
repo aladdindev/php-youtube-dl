@@ -11,7 +11,7 @@ A PHP script to help you download your videos from Youtube
 ## PHPYoutubeDL
 
 ### Example #1: Basic download
-```
+```php
 require_once 'vendor/autoload.php';
 
 use PHPYoutubeDl\PHPYoutubeDl;
@@ -22,7 +22,7 @@ $php_youtube_dl->startDownload();
 ```
 
 ### Example #2: Prints direct download link
-```
+```php
 require_once 'vendor/autoload.php';
 
 use PHPYoutubeDl\PHPYoutubeDl;
@@ -33,7 +33,7 @@ echo $php_youtube_dl->getDirectLink();
 ```
 
 ### Example #3: With progress function
-```
+```php
 require_once 'vendor/autoload.php';
 
 use PHPYoutubeDl\PHPYoutubeDl;
