@@ -3,19 +3,65 @@ A PHP script to help you download your videos from Youtube
 
 ![](http://www.aladdian.com/img/ytdl.png)
 
-## Getting Started
+
+## Requirements
+* PHP >=5.3
+* PHP CURL extension is optional
+
+## PHPYoutubeDL
+
+### Example #1: Basic download
+```
+require_once 'vendor/autoload.php';
+
+use PHPYoutubeDl\PHPYoutubeDl;
+
+$php_youtube_dl = new PHPYoutubeDl("http://www.youtube.com/watch?v=xxxxxx");
+
+$php_youtube_dl->startDownload();
+```
+
+### Example #2: Prints direct download link
+```
+require_once 'vendor/autoload.php';
+
+use PHPYoutubeDl\PHPYoutubeDl;
+
+$php_youtube_dl = new PHPYoutubeDl("http://www.youtube.com/watch?v=xxxxxx");
+
+echo $php_youtube_dl->getDirectLink();
+```
+
+### Example #3: With progress function
+```
+require_once 'vendor/autoload.php';
+
+use PHPYoutubeDl\PHPYoutubeDl;
+
+function showProgress($downloaded_size, $download_size){
+	echo $downloaded_size / $download_size;
+	echo PHP_EOL;
+	flush();
+}
+
+$php_youtube_dl = new PHPYoutubeDl("http://www.youtube.com/watch?v=xxxxxx");
+$php_youtube_dl->setProgressCallback('showProgress');
+$php_youtube_dl->startDownload();
+```
+
+## php-youtube-dl-cli
 Download the [PHP script][php].
 
-[php]: https://raw.githubusercontent.com/aladdindev/php-youtube-dl/master/php-youtube-dl.php
+[php]: https://raw.githubusercontent.com/aladdindev/php-youtube-dl/master/src/php-youtube-dl-cli.php
 
 Make sure PHP-CLI is installed and added to your PATH variable.
 
 ```
-php php-youtube-dl.php -f 28 -t myvideo http://youtube.com/watch?v=xxxxxx
+php php-youtube-dl-cli.php -f 28 -t myvideo http://youtube.com/watch?v=xxxxxx
 
 ```
 
-## Arguments
+### Arguments
 You can use the following arguments:
 
 | Option  | Description |
