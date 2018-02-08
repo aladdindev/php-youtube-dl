@@ -64,11 +64,10 @@ php php-youtube-dl-cli.php -f 28 -t myvideo http://youtube.com/watch?v=xxxxxx
 ### Arguments
 You can use the following arguments:
 
-| Option  | Description |
-| ---- | ---- | ---- |
+| Option | Description |
+| ---- | ---- |
 | -c | Prints currently used JS cipher function. |
 | -t title | Specify a custom filename. The video ID and the extension will still be appended to this argument. |
 | -f format | Specify a format to download. You can access the list of available format IDs using the -l argument. |
 | -l | Lists the available formats for the provided video. |
 | -h | Prints the help section. |
-
